@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Feeding India Concert with Vijay Devarakonda</title>
+    <style>
+        .bg {
+            background-image: url(background.jpeg);
+            color: #ffffff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Comic Sans MS";
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            width: 100%;
+            height: 75px;
+            padding: 0 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo{
+            height: 75px;
+            width: auto;
+        }
+
+        .details-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(72, 71, 71, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
+            margin-top: 50px;
+        }
+
+        .details-container ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .details-container li {
+            margin-bottom: 10px;
+        }
+
+        .cen {
+            text-align: center;
+        }
+
+        #booking-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(3, 8, 79);
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgb(131, 130, 130);
+            z-index: 1000;
+            width: 300px;
+        }
+
+        .modal-content {
+            position: relative;
+            text-align: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -30px;
+            right: -10px;
+            cursor: pointer;
+            font-size: 40px;
+            color: red;
+        }
+
+        #responseMessage {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="bg">
+    <header class="header">
+        <img class="logo" src="logo.jpg">
+    </header>
+    <div class="details-container">
+            <h1>Feeding India Concert with Vijay Devarakonda</h1>
+
+        <section class="event-details">
+            <h2>Event Details</h2>
+            <ul>
+                <li><strong>Date:</strong> Sun, 29 June, 2025</li>
+                <li><strong>Name:</strong> Feeding India Concert with Vijay Devarakonda</li>
+                <li><strong>Place:</strong> Hyderabad </li>
+                <li><strong>Language:</strong> Telugu </li>
+                <li><strong>Venue:</strong> Gachibowli Indoor Stadium</li>
+                <li><strong>Duration:</strong> 240min</li>
+                <li><strong>Age:</strong> 12+</li>
+                <li><strong>Dress Code:</strong> None </li>
+                <li><strong>Ticket Price:</strong> 2500</li>
+                <li><strong>Ticket Available:</strong> 800/3000</li>
+            </ul>
+        </section>
+
+        <section class="booking-form">
+            <button id="book-now-button">Book Now</button>
+        </section>
+    </div>
+    <div id="booking-modal" class="hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-modal">&times;</span>
+            <h2>Enter Your Details</h2>
+            <form id="bookingForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="quantity">Tickets:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="responseMessage" class="hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
